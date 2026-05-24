@@ -5,7 +5,7 @@ services:
   runtime: image
   image:
     url: docker.io/minio/minio:latest
-  dockerCommand: minio server /data --address $URL --console-address $HOST:$CONSOLE_PORT
+  dockerCommand: minio server /data --address $HOST:$PORT --console-address $HOST:$CONSOLE_PORT
   # Use the following 'dockerCommand' if removing the 'minio-console'
   # web service
   # dockerCommand: minio server /data --address $HOST:$PORT
@@ -18,12 +18,12 @@ services:
     generateValue: true
   - key: MINIO_SECRET_KEY
     generateValue: true
-  - key: URL
-    value: "http://0.0.0.0:9000"
+  - key: HOST
+    value: "0.0.0.0"
+  - key: PORT
+    value: 9000
   - key: CONSOLE_PORT
     value: 9090
-  - key: HOST
-    value: 0.0.0.0
   - key: MINIO-BUCKET
     generateValue: true
   # Uncomment the following key/value pair if you are removing the
