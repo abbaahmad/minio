@@ -14,14 +14,12 @@ services:
     name: data
     mountPath: /data
   envVars:
-  - key: MINIO_ROOT_USER
+  - key: MINIO_ACCESS_KEY
     generateValue: true
-  - key: MINIO_ROOT_PASSWORD
+  - key: MINIO_SECRET_KEY
     generateValue: true
-  - key: HOST
-    value: "0.0.0.0"
-  - key: PORT
-    value: 9000
+  - key: URL
+    value: "http://0.0.0.0:9000"
   - key: CONSOLE_PORT
     value: 9090
   # Uncomment the following key/value pair if you are removing the
